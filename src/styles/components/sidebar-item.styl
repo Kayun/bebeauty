@@ -1,0 +1,52 @@
+.sidebar-item
+	position: relative
+	padding-left: 60px
+	display: inline-block
+	line-height: rem(40px)
+	b: none
+	text-align: left
+	background-color: transparent
+	text-decoration: none
+	cursor: pointer
+
+	.icon
+		absolute: top 0 left 0
+		opacity: .5
+		fill: $blue
+		will-change: opacity
+
+	&:hover
+
+		.icon
+			opacity: 1
+
+		.sidebar-item__label
+			color: $light-purple
+
+	&_state_active
+
+		.icon
+			opacity: 1
+
+	&_color
+
+		&_green
+
+			.icon
+				fill: $green
+
+	&__label
+		display: inline-block
+		fs: rem(12px)
+		color: $blue
+		museo-b()
+		text-align: left
+		text-transform: uppercase
+		line-height: rem(20px)
+		transition: color .3s ease
+
+		&_font_lowercase
+			text-transform: none
+
+		&_font-weigth_300
+			museo-r()

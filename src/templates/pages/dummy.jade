@@ -1,0 +1,160 @@
+include ../helpers/variables
+include ../helpers/mixins
+
+doctype html
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' content='width=1024px')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		title Заглушка
+		link(href='https://fonts.googleapis.com/css?family=Roboto:100,400,400italic,300&subset=latin,cyrillic' rel='stylesheet')
+		//link(href= "/assets/styles/dummy.min.css?" rel='stylesheet')
+
+		style *{margin:0;padding:0;font:inherit;box-sizing:border-box}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-focus-ring-color:rgba(255,255,255,0);cursor:default}body{font-size:100%;line-height:1;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}a{background:0 0}*:focus,*:active,*:hover{outline:0}hr{box-sizing:content-box;height:0}ol,ul{list-style:none}pre{-moz-tab-size:4;tab-size:4;white-space:pre-wrap}q{quotes:'\201C' '\201D' '\2018' '\2019'}img{border:0}svg:not(:root){overflow:hidden}button,input{line-height:normal}button,select{text-transform:none}button{overflow:visible}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}button,input,select[multiple],textarea{background-image:none}input,select,textarea{border-radius:0;box-shadow:none}input,textarea{resize:none;-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}table{border-collapse:collapse;border-spacing:0}html{font-family:'Roboto',sans-serif;font-style:normal;font-weight:400;color:#323232;font-size:16px}.width-100p{width:100%}.right{float:right}.left{float:left}.icon{display:inline-block;transition:all .3s ease}.icon-succees{width:2.5rem;height:2.5rem}.icon-logo{width:7.5rem;height:11.0875rem}.icon-delete{width:2.5rem;height:2.5rem}.button{padding:0 30px;display:inline-block;font-size:13px;font-size:.8125rem;line-height:2.5rem;text-align:center;border:none;background-color:#3eaf71;cursor:pointer;font-weight:700;color:#fff;border-radius:999px;transition:all .3s ease}.button:hover{background-color:#4abf7e}.button+.button{margin-left:15px}.button:active{background-color:#42b978;box-shadow:inset 1px 1px 2px rgba(0,0,0,.2),1px 1px 1px rgba(0,0,0,.2)}.button_width_170{width:10.625rem}[type="text"],[type="password"]{text-indent:.01px;text-overflow:'';-ms-appearance:none;-webkit-appearance:none!important;-moz-appearance:none!important;appearance:none!important}[type="text"]::-ms-expand,[type="password"]::-ms-expand{display:none}[type="text"]::-webkit-input-placeholder,[type="password"]::-webkit-input-placeholder{font-weight:300;color:#9996b2;transition:color .3s ease;will-change:color}[type="text"]::-moz-placeholder,[type="password"]::-moz-placeholder{font-weight:300;color:#9996b2;transition:color .3s ease;will-change:color}[type="text"]:-ms-input-placeholder,[type="password"]:-ms-input-placeholder{font-weight:300;color:#9996b2;transition:color .3s ease;will-change:color}[type="text"]::placeholder,[type="password"]::placeholder{font-weight:300;color:#9996b2;transition:color .3s ease;will-change:color}[type="text"]:focus::-webkit-input-placeholder,[type="password"]:focus::-webkit-input-placeholder{color:rgba(153,150,178,.5)}[type="text"]:focus::-moz-placeholder,[type="password"]:focus::-moz-placeholder{color:rgba(153,150,178,.5)}[type="text"]:focus:-ms-input-placeholder,[type="password"]:focus:-ms-input-placeholder{color:rgba(153,150,178,.5)}[type="text"]:focus::placeholder,[type="password"]:focus::placeholder{color:rgba(153,150,178,.5)}.input-block{position:relative;width:33.125rem}.input-block+.input-block{margin-top:15px}.input-block_valid_succees .icon-succees,.input-block_valid_fail .icon-delete,.input-block_inline{display:inline-block}.input-block__label{padding-bottom:.625rem;text-align:left}.input-block__label_required:after{position:relative;left:.1875rem;content:'*';color:#f9848b;line-height:.8125rem;font-size:22px;font-size:1.375rem}.input{position:relative;display:inline-block;width:100%;height:3.75rem;font-size:17px;font-size:1.0625rem;background-color:#f9f8fd}.input:last-child .input__field,.input_border-bottom_transparent .input__field{border-bottom-color:transparent}.input__bg{z-index:1;width:0;height:100%;display:block;border-bottom:1px solid #9996b2;background-color:#f5fbf8;transition:width .3s ease}.input__bg,.input__prefix{position:absolute;top:0;left:0}.input__prefix{z-index:3;width:3.75rem;height:3.6875rem;background-color:#f3f2f9;text-align:center;line-height:3.6875rem}.input__status{display:none;position:absolute;top:.625rem;right:1.875rem;z-index:3}.input__status.icon-succees{fill:#3eaf71;opacity:.5}.input__status.icon-delete{fill:#f9848b;opacity:.5}.input__field{position:relative;z-index:2;padding:0 30px;width:100%;height:3.75rem;background-color:transparent;color:#323232;line-height:3.6875rem;border:none;border-bottom:1px dotted #d0cee1;white-space:nowrap;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;word-wrap:normal}.input__field_paddin-left_80{padding-left:5rem}.input__field_paddin-right_90{padding-right:5.625rem}.input__field:focus~.input__bg{width:100%}.input__field:focus~.icon{opacity:1}.title{display:inline-block;margin-top:-3.4375rem;padding-bottom:3.4375rem}.title__text{display:inline-block;font-size:80px;font-size:5rem;font-weight:100}h2.title__text{padding-right:.9375rem}.title__logo{position:relative;top:3.4375rem;margin:0 1.875rem;fill:#3eaf71}.dummy{margin:30px auto 50px;max-width:1024px;text-align:center}.dummy-form{margin:30px auto 0;max-width:530px;text-align:left}.dummy-form .button{margin-top:20px}.dummy-form h2{margin-bottom:40px;font-weight:100;text-align:center;font-size:38px;font-size:2.375rem}.dummy-info{padding:0 40px;margin-top:30px;text-align:justify;font-weight:300;line-height:1.25rem}.dummy-info__link{font-weight:400;transition:all .3s ease;text-decoration:none;display:inline-block;color:#323232;border-bottom:1px dotted #323232}.dummy-info__link:hover{color:#3eaf71;border-color:#3eaf71}.dummy-info p+p{margin-top:10px}.dummy-note{margin-top:20px;color:#a9a9a9;font-size:12px;font-size:.75rem;text-align:right;font-style:italic}.dummy-note span{position:relative;display:inline-block;top:6px;color:#f9848b;line-height:.625rem;font-size:22px;font-size:1.375rem}.dummy-social{margin-top:20px;fz:0;text-align:center}.dummy-social a{text-decoration:none}.dummy-social a+a{margin-left:20px}.dummy .social-icon{display:inline-block;width:40px;height:40px;fill:#323232;transition:fill .3s ease;cursor:pointer}.dummy .social-icon:hover{fill:#3eaf71}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){[type="text"]::-ms-clear,[type="password"]::-ms-clear{display:none}[type="text"]::-ms-reveal,[type="password"]::-ms-reveal{display:none}}
+
+	body
+		.dummy
+
+			.title
+				h1.title__text BeBeauty
+				svg.icon.icon-logo.title__logo(viewBox="0 0 120 177.4")
+					polygon(points='67.4,97.9 67.4,97.9 110.4,0 57.7,84.1')
+					path(d='M34,165.3c-5.9,3.4-13.4,1.3-16.8-4.6c-3.4-5.9-1.3-13.4,4.6-16.8c5.9-3.4,13.4-1.3,16.8,4.6C41.9,154.4,39.9,161.9,34,165.3 M45.7,140.4l10-18.5l-7.5-13.1l-2.7-6l-15.6,29c-8.8-0.8-17.6,3.6-22.1,11.9c-6,11.1-1.8,24.9,9.3,30.9c11.1,6,24.9,1.8,30.9-9.3C52.4,157.1,51.2,147.3,45.7,140.4')
+					path(d='M92.7,164.6c-5.9,3.4-13.4,1.3-16.8-4.6c-3.4-5.9-1.3-13.4,4.6-16.8c5.9-3.4,13.4-1.3,16.8,4.6C100.7,153.7,98.6,161.3,92.7,164.6 M59.8,106.9c-1.1,0.7-2.5,0.7-3.6,0.2l4.6-6.7c0.2,0.2,0.4,0.5,0.6,0.8C62.5,103.2,61.8,105.7,59.8,106.9 M54.7,106c-0.2-0.2-0.4-0.5-0.5-0.7c-1.1-2-0.4-4.5,1.6-5.7c1.1-0.6,2.4-0.7,3.6-0.3L54.7,106zM118.6,158c2.4-4.4,1.6-8.2-0.6-8.1c-2.2,0.1-3.7,8.8-9.2,9.2c1.3-5.4,0.6-11.3-2.4-16.5c-4.7-8.2-13.6-12.4-22.4-11.4L65.7,99L0-0.2l50.1,108.1l18.4,32.2c-5.3,7-6.3,16.9-1.6,25c6.2,10.9,20.1,14.8,31.1,8.5C98.9,173.1,112.2,169.8,118.6,158')
+					polygon(points='110.4,0 57.7,84.1 67.4,97.9 67.4,97.9')
+				h1.title__text LogBook
+
+			.dummy-info
+				p
+					| BeBeauty — уникальный инструмент, который позволяет сотрудникам салона красоты просто и быстро
+					| взаимодействовать с клиентами. Проект работает как для трудящихся в бьюти-сфере, так и для их клиентов.
+					| А потому делится на две части.
+
+				p
+					| Клиентская часть — BeBeauty — позволяет любому желающему буквально за пару минут найти подходящий салон
+					| (по месторасположению, наличию необходимых услуг и проч.) для того, чтобы привести себя в порядок.
+					| Выбрав салон и мастера, человек записывается к нему — без звонков, ожиданий, длительного обсуждения
+					| удобного времени. Клиент сам решает, когда и куда он пойдет.
+
+				p
+					| Сервисе для салонов красоты — LogBook — создан для того, чтобы стать вашим главным помощником в
+					| организации работы, привлечении новых клиентов и увеличении прибыли. С сервисом проще простого
+					| вести запись клиентов, утитывать расход материалов и вести финансовую отчетность.
+
+				p
+					| Подробнее о сервисе и дате запуска проекта вы можете узнать в нашем
+					= " "
+					a.dummy-info__link(href= jv0) блоге
+					| , а так же на страницах в социальных сетях.
+
+			form.dummy-form.js-form
+
+				h2 Оформить подписку
+
+				.input-block
+					.input-block__label.input-block__label_required Электронная почта
+					.input
+						input.input__field.input__field_paddin-right_90(type="text" name="email" placeholder="Введите адрес Вашей элестронной почты...")
+						span.input__bg
+						svg.icon.icon-delete.input__status(viewBox="0 0 40 40")
+							path(d="M20,40C9,40,0,31,0,20S9,0,20,0s20,9,20,20S31,40,20,40z M26.4,15.1L25,13.6l-5,5l-4.9-5l-1.4,1.4l5,4.9l-5,5l1.4,1.4l4.9-5l5,5l1.4-1.4l-5-5L26.4,15.1z")
+						svg.icon.icon-succees.input__status(viewBox="0 0 40 40")
+							path(d="M20.000,40.000 C8.954,40.000 0.000,31.046 0.000,20.000 C0.000,8.954 8.954,0.000 20.000,0.000 C31.046,0.000 40.000,8.954 40.000,20.000 C40.000,31.046 31.046,40.000 20.000,40.000 ZM25.981,13.000 C25.981,13.000 17.209,23.169 17.209,23.169 C17.209,23.169 14.000,20.000 14.000,20.000 C14.000,20.000 12.000,22.000 12.000,22.000 C12.000,22.000 17.213,27.000 17.213,27.000 C17.213,27.000 28.000,15.000 28.000,15.000 C28.000,15.000 25.981,13.000 25.981,13.000 Z")
+
+				.input-block
+					.input-block__label Дополнительные данные
+
+					.input
+						input.input__field(type="text" name="name" placeholder="ФИО")
+						span.input__bg
+
+					.input
+						input.input__field(type="text" name="organization" placeholder="Название солона (для юридических лиц)")
+						span.input__bg
+
+					.input
+						input.input__field.input__field_paddin-left_80(type="text" name="phone" placeholder="Телефон")
+						span.input__bg
+						span.input__prefix +7
+
+				.dummy-note
+					| Поля отмеченные звездочкой (
+					span *
+					| ) обязательны для заполнения
+
+				.dummy-social.right
+					a(href= jv0)
+						svg.social-icon(viewBox="0 0 96 96")
+							path(d="M53.2,52.9C51.6,52,49.5,52,47.8,52h-5.7v11.8h5.2c1.9,0,4.4,0.1,6.1-1c1.5-1,2.4-3.1,2.4-5C55.8,56,54.7,53.8,53.2,52.9z M51,42.9c1.3-1,1.9-2.7,1.9-4.3c0-1.7-0.8-3.4-2.3-4.3c-1.5-0.9-4.3-0.7-6.2-0.7h-2.5V44h3.3C47.2,44,49.4,44.1,51,42.9z M79.1,0H16.9C7.6,0,0,7.6,0,16.9v62.3C0,88.4,7.6,96,16.9,96h62.3C88.4,96,96,88.4,96,79.1V16.9C96,7.6,88.4,0,79.1,0z M50.6,72.5H31V25.2h21.4c6.2,0,11.9,4,11.9,10.9c0,5.4-3,9.1-6.8,10.2v0.1c5.7,1.2,9.7,4.3,9.7,11.7C67.3,65.1,62.6,72.5,50.6,72.5z")
+
+					a(href= jv0)
+						svg.social-icon(viewBox="0 0 86 86")
+							path(d="M75.3,0H10.8C4.8,0,0,4.8,0,10.8v64.5C0,81.2,4.8,86,10.8,86h32.6V55.2H33.1V41.7h10.3V35c0-10.4,7.7-18.5,17.4-18.5h9.5v15.2h-8.5c-2.2,0-2.9,1.3-2.9,3v7h11.4v13.4H58.9V86h16.3C81.2,86,86,81.2,86,75.3V10.8C86,4.8,81.2,0,75.3,0z")
+
+					a(href= jv0)
+						svg.social-icon(viewBox="0 0 86 86")
+							path(d="M69,43c0,14.4-11.6,26-26,26c-14.4,0-26-11.6-26-26c0-1.7,0.2-3.4,0.5-5H0v34.6C0,80,6,86,13.4,86h59.1C80,86,86,80,86,72.6V38H68.5C68.8,39.6,69,41.3,69,43z M72.6,0H13.4C6,0,0,6,0,13.4V28h21.8c4.7-6.7,12.5-11,21.2-11c8.8,0,16.5,4.3,21.2,11H86V13.4C86,6,80,0,72.6,0z M79.1,16.6c0,1.3-1.1,2.4-2.4,2.4h-7.2c-1.3,0-2.4-1.1-2.4-2.4V9.4c0-1.3,1.1-2.4,2.4-2.4h7.2c1.3,0,2.4,1.1,2.4,2.4V16.6z M59,43c0-8.8-7.2-16-16-16c-8.8,0-16,7.2-16,16s7.2,16,16,16C51.8,59,59,51.8,59,43z")
+
+				button.button.button_width_170(type="submit") Подписаться
+
+		noindex
+			script.
+				(function () {
+					var form = document.querySelector('.js-form'),
+						email = form.elements.email;
+
+					function valid (input) {
+						var wrapper = input.closest('.input-block');
+
+						if (/^.+@\w+\.\w+$/.test(input.value)) {
+							wrapper.classList.add('input-block_valid_succees');
+							wrapper.classList.remove('input-block_valid_fail');
+						} else {
+							wrapper.classList.remove('input-block_valid_succees');
+							wrapper.classList.add('input-block_valid_fail');
+						}
+					}
+
+					function send (params) {
+
+						var request = new XMLHttpRequest();
+
+						request.open('POST', '/index.php', true);
+
+						request.onreadystatechange = function() {
+							if (request.readyState != 4) return;
+
+							if (request.status != 200) {
+								console.log('error');
+							} else {
+								console.log(request.response);
+							}
+
+						};
+
+						request.send(params);
+					}
+
+					email.onchange = function (event) {
+						valid(event.target);
+					}
+
+					form.onsubmit = function (event) {
+						event.stopPropagation();
+						event.preventDefault();
+
+						var email = this.elements.email,
+							wrapper = email.closest('.input-block');
+
+						valid(email);
+
+						if (wrapper.classList.contains('input-block_valid_succees')) {
+							var formData = new FormData(this);
+							console.log(this);
+							console.log(formData);
+							send(formData);
+						}
+					}
+				})();
+

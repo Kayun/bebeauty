@@ -1,0 +1,27 @@
+.button
+	padding: 0 30px
+	display: inline-block
+	fs: rem(13px)
+	line-height: rem(40px)
+	text-align: center
+	border: none
+	background-color: $green
+	cursor: pointer
+	font-weight: 700
+	color: #fff
+	rounded()
+	no-select()
+	transition: all .3s ease
+	hover-lighten: 10%
+
+	& + &
+		margin-left: 15px
+
+	&:active
+		background-color: lighten($green, 5%)
+		box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .2), 1px 1px 1px rgba(0, 0, 0, .2)
+
+	&_width
+
+		&_170
+			width: rem(170px)

@@ -1,0 +1,79 @@
+$inputBgColor = #f9f8fd
+$inputBgColorHover = #f5fbf8
+$inputBorderColor = #d0cee1
+$inputPrefixColor = #f3f2f9
+
+.input
+	$height = 60px
+	position: relative
+	display: inline-block
+	size(100%, rem($height))
+	fs: rem(17px)
+	background-color: $inputBgColor
+
+	&:last-child
+	&_border-bottom_transparent
+
+		.input__field
+			border-bottom-color: transparent
+
+	&__bg
+		absolute: top 0 left 0
+		z-index: 1
+		size(0, 100%)
+		display: block
+		border-bottom: 1px solid #9996b2
+		background-color: $inputBgColorHover
+		transition: width .3s ease
+
+	&__prefix
+		absolute: top 0 left 0
+		z-index: 3
+		size(rem($height), rem($height - 1))
+		background-color: $inputPrefixColor
+		text-align: center
+		line-height: rem($height - 1)
+
+	&__status
+		display: none
+		absolute: top rem(10px) right rem(30px)
+		z-index: 3
+
+		&.icon-succees
+			fill: $green
+			opacity: .5
+
+		&.icon-delete
+			fill: $red
+			opacity: .5
+
+	&__field
+		position: relative
+		z-index: 2
+		padding: 0 30px
+		size(100%, rem($height))
+		background-color: transparent
+		color: $font-color
+		line-height: rem($height - 1)
+		b: none
+		border-bottom: 1px dotted $inputBorderColor
+		ellipsis()
+
+		&_paddin-left_80
+			padding-left: rem(80px)
+
+		&_paddin-right_90
+			padding-right: rem(90px)
+
+		&::placeholder
+			//transition-duration: .3s
+
+		&:focus
+
+			& ~ .input__bg
+				width: 100%
+
+			& ~ .icon
+				opacity: 1
+
+

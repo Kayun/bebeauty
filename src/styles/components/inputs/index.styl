@@ -1,0 +1,25 @@
+$inputPlaceholderColor = rgba(153, 150, 178, 1)
+$inputPlaceholderColorFocus = rgba(153, 150, 178, .5)
+
+[type="text"]
+[type="password"]
+	appearance-hide()
+
+	&::placeholder
+		font-weight: 300
+		color: $inputPlaceholderColor
+		transition: color .3s ease
+		will-change: color
+
+	&:focus::placeholder
+		color: $inputPlaceholderColorFocus
+
++forIe10()
+	[type="text"]
+	[type="password"]
+		&::-ms-clear
+			display: none
+
+		&::-ms-reveal
+			display: none
+

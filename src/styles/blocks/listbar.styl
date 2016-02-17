@@ -1,0 +1,37 @@
+@require '../helpers/variables'
+
+$listbar-bg-color = #f9f8fd
+
+.listbar
+	@extend $sidebar
+	padding: rem(40px) rem(20px)
+	height: 100%
+	background-color: $listbar-bg-color
+
+	&__action
+		padding: 0 rem(20px)
+
+	&__search
+		margin-top: rem(30px)
+		margin-bottom: rem(10px)
+
+	&__item
+		display: inline-block
+		padding: rem(4px) rem(20px)
+		line-height: rem(18px)
+		fs: rem(13px)
+		background-color: transparent
+		b: 2px solid transparent
+		rounded()
+		text-decoration: none
+		color: $font-color
+		transition: all .3s ease
+		cursor: pointer
+
+		&:hover
+		&_state_active
+			border-color: $light-green
+
+		&_state_active
+			background-color: $light-green
+

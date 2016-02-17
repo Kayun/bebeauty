@@ -1,0 +1,13 @@
+mixin checkbox(label, side)
+	label.checkbox&attributes(attributes)
+		input.checkbox__input(type="checkbox")
+		if (side == "left")
+			.checkbox__toggle
+				+icon("check")
+			.checkbox__label= label
+
+		if (side == "right")
+			.checkbox__label= label
+			.checkbox__toggle
+				+icon("check")
+

@@ -1,0 +1,38 @@
+.round-input
+	$height = 40px
+	position: relative
+	display: inline-block
+	size(100%, rem($height))
+
+	&__clear
+		absolute: top rem(15px) right rem(20px)
+		fill: #d1cfe1
+		opacity: .5
+		will-change: opacity
+		cursor: pointer
+
+	&__field
+		padding: 0 50px 0 20px
+		size(100%)
+		line-height: rem($height - 4)
+		background-color: #f9f8fd
+		b: 2px solid rgba(#d1cfe1, .5)
+		color: $font-color
+		rounded()
+		ellipsis()
+		fs: rem(13px)
+		transition: border-color .3s ease
+
+		&:focus
+			border-color: rgba(#d1cfe1, 1)
+
+			& ~ .round-input__clear
+				opacity: 1
+
+		&_type_header-search
+			background-color: transparent
+			color: #d1cfe1
+
+		&_bg_white
+			background-color: #ffffff
+

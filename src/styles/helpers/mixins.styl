@@ -1,0 +1,33 @@
+clearfix()
+	&:after
+		display table
+		clear both
+		content ''
+
+size($width, $height = $width)
+	width: $width
+	height: $height
+
+forIe10()
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		{block}
+	}
+
+
+appearance-hide() {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 0.01px;
+	text-overflow: '';
+	-ms-appearance: none;
+	appearance: none !important;
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+align()
+	absolute: top 50% left 50%
+	transform: translate(-50%, -50%)
+

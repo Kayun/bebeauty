@@ -1,0 +1,86 @@
+extends ../../layouts/additional-toolbar
+
+block sidebar
+	ul.list
+		li
+			a.sidebar-item.sidebar-item_state_active.l-width-100p(href= jv0)
+				span.sidebar-item__label Мастера
+				+icon('staff')
+
+		li
+			a.sidebar-item.l-width-100p(href= jv0)
+				span.sidebar-item__label Группа мастеров
+				+icon('group')
+
+		li
+			a.sidebar-item.l-width-100p(href= jv0)
+				span.sidebar-item__label Рабочее время
+				+icon('time')
+
+		li
+			a.sidebar-item.l-width-100p(href= jv0)
+				span.sidebar-item__label Настройки СМС
+				+icon('sms')
+
+		li
+			a.sidebar-item.l-width-100p(href= jv0)
+				span.sidebar-item__label Программа лоялности
+				+icon('payment')
+
+block listbar
+
+	.listbar__action
+
+		button.sidebar-item.l-width-100p(type="button")
+			span.sidebar-item__label.sidebar-item__label_font-weigth_300.sidebar-item__label_font_lowercase Добавить мастера
+			+icon('add')
+
+	.listbar__search
+
+		.input-block.l-width-100p
+			.round-input
+				input.round-input__field.round-input__field_bg_white(type="text" placeholder="Поиск...")
+				+icon("clear").round-input__clear
+
+	ul.list.list_indent_10
+
+		li
+			a.listbar__item.l-width-100p(href= jv0) Екатерина Семенова
+		li
+			a.listbar__item.listbar__item_state_active.l-width-100p(href= jv0) Анастасия Крупицкая
+		li
+			a.listbar__item.l-width-100p(href= jv0) Екатерина Семенова
+		li
+			a.listbar__item.listbar__item_state_active.l-width-100p(href= jv0) Иванов Иван Иванович-Владимирович
+		li
+			a.listbar__item.l-width-100p(href= jv0) Екатерина Семенова Семенова
+		li
+			a.listbar__item.l-width-100p(href= jv0) Анастасия Крупицкая
+		li
+			a.listbar__item.l-width-100p(href= jv0) Екатерина Семенова
+		li
+			a.listbar__item.l-width-100p(href= jv0) Анастасия Крупицкая
+
+block content
+	form.card
+		.card-header
+
+			.card__row.l-right
+				+checkbox("Мастер виден на сайте", "right")
+
+			.card__avatar.l-left
+				img(src='')
+
+			h1.card__title: span Павел Золотарев
+
+		.card__row
+			+checkbox("Мастер имеет доступ к Кабинету", "left")
+
+		+input-text("Отчество")
+		+input-text("Должность")
+		+input-phone("Номер телефона")
+		+input-text("Пол")
+		+input-text("Дата рождения")
+		+input-text("Адрес")
+		+input-text("Дополнительная информация")
+

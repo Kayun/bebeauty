@@ -1,0 +1,51 @@
+.checkbox
+	display: inline-block
+	position: relative
+	vertical-align: top
+	fs: 0
+	cursor: pointer
+
+	&:hover
+
+		.checkbox__toggle
+			box-shadow: 0 0 5px 1px rgba($green, .75)
+
+	&__input
+		position: absolute
+		opacity: 0
+		z-index: -1
+
+		&:checked
+
+			& ~ .checkbox__toggle
+				background-color: $green
+
+				.icon
+					opacity: 1
+
+	&__toggle
+		position: relative
+		display: inline-block
+		size(rem(30px))
+		vertical-align: top
+		background-color: #d8d6e6
+		transition: all .3s ease
+
+		& + .checkbox__label
+			padding-left: 15px
+			padding-right: 0
+
+	&__label
+		padding-right: 15px
+		display: inline-block
+		line-height: rem(30px)
+		vertical-align: top
+		museo-r()
+		fs: rem(12px)
+		no-select()
+
+
+	.icon
+		fill: #fff
+		align()
+		opacity: 0

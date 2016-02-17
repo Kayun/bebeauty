@@ -1,0 +1,98 @@
+include ../../helpers/variables
+include ../../helpers/mixins
+
+mixin ui-kit-area(title)
+	.ui-kit-item
+		.ui-kit-title= title
+		.ui-kit-content
+			block
+
+doctype html
+html
+
+	head
+		title= projectName + ' :: v' + projectVersion + ' :: UI-Kit'
+		link(href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300italic,300,500,500italic,700,700italic&subset=latin,cyrillic' rel='stylesheet')
+		link(href= "/assets/styles/common.min.css?" + timestamp rel = 'stylesheet')
+
+		style.
+			.ui-kit {
+				padding: 20px;
+				overflow: hidden;
+				font-size: 0;
+			}
+
+			.ui-kit-item {
+				padding: 0 20px 20px;
+				width: 47.5%;
+				display: inline-block;
+				border: 2px solid #77b882;
+				font-size: 16px;
+				vertical-align: top;
+				border-radius: 5px
+			}
+
+			.ui-kit-title {
+				padding-top: 10px;
+				padding-bottom: 10px;
+				margin-bottom: 20px;
+				font-size: 20px;
+				border-bottom: 1px solid #77b882;
+			}
+
+			.ui-kit-descr {
+				padding: 10px 0;
+				font-style: italic;
+				color: darkgray;
+			}
+
+			.ui-kit-item + .ui-kit-item {
+				margin-left: 5%;
+			}
+
+	body
+		.ui-kit
+			+ui-kit-area("Поля ввода")
+				.input
+					input.input__field(type="text" placeholder="Подсказка...")
+					span.input__bg
+
+				.input
+					input.input__field.input__field_paddin-left_80(type="text" placeholder="Подсказка...")
+					span.input__bg
+					span.input__prefix +7
+
+				.input
+					input.input__field(type="password" placeholder="Введите пароль...")
+					span.input__bg
+
+				.input-block(style="margin-top: 50px")
+					.input-block__label.input-block__label_required Электронной почта
+					.input.input_border-bottom_transparent
+						input.input__field.input__field_paddin-right_90(type="text" placeholder="Введите адрес Вашей элестронной почты...")
+						span.input__bg
+						+icon("succees").input__status
+
+				.input-block
+					.input-block__label.input-block__label_required Описание инпута
+					.input.input_border-bottom_transparent
+						input.input__field.input__field_paddin-right_90(type="text" placeholder="Подсказка...")
+						span.input__bg
+						+icon("succees").input__status
+
+				.ui-kit-descr
+					| Описание элемента элемента элемента элемента элемента элемента элемента элемента элемента
+
+				.input-block
+					.round-input
+						input.round-input__field(type="text" placeholder="Подсказка...")
+						+icon("clear").round-input__clear
+
+			+ui-kit-area("Кнопки")
+				button.button(type="button") Кнопка
+				button.button.button_width_170(type="button") Кнопка
+
+				.ui-kit-descr
+					| Описание элемента элемента элемента элемента
+
+				button.button.width-100p(type="button") Кнопка

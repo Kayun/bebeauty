@@ -1,0 +1,59 @@
+header.header.header_state_menu-open
+	.header-tools.l-left
+		a.header__note.l-mobile-hidden.l-right(href= jv0) 111
+		.header-button.l-tablet-hidden.l-desktop-hidden.header-button_z_2.l-right
+			+icon('loupe')
+
+		.header-button.header__open.l-tablet-hidden.l-desktop-hidden.l-left
+			+icon('list')
+
+		.header__logo
+			+logo("Log", "Book")
+
+		.header__search
+			.round-input.l-width-100p
+				input.round-input__field.round-input__field_type_header-search(type="text" placeholder="Поиск...")
+				+icon("clear").round-input__clear
+
+	.header-options
+		a.header-button.l-tablet-hidden.l-mobile-hidden.l-right(href= jv0 title="Техническая поддержка"): +icon('support')
+		a.header-button.header-button_state_active.l-right(href= jv0 title="Настройки"): +icon('setting')
+		a.header-button.header__login.header-button_type_text.l-right(href= jv0 title="Иванов Иван Иванович") Иванов Иван
+
+	.header__menu
+		nav.menu
+			a.menu__link(href= jv0)
+				.menu__item.menu__item_type_main
+					+icon('home')
+					| Главная
+
+			a.menu__link(href= jv0)
+				.menu__item.menu__item_type_calendar
+					+icon('calendar')
+					| Календарь
+
+			a.menu__link(href= jv0)
+				.menu__item.menu__item_type_services
+					+icon('order')
+					| Услуги
+
+			a.menu__link(href= jv0)
+				.menu__item.menu__item_type_clients
+					+icon('people')
+					| Клиенты
+
+			a.menu__link(href= jv0)
+				.menu__item.menu__item_type_finances
+					+icon('diagram')
+					| Финансы
+
+			a.menu__link(href= jv0)
+				.menu__item.menu__item_type_stock
+					+icon('box')
+					| Склад
+	.header__exit.l-desktop-hidden
+		button.header-button.header-button_padding-left_30.header-button_type_text.l-width-100p(type="button") Выход
+
+
+
+

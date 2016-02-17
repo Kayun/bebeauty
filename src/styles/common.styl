@@ -1,0 +1,22 @@
+rupture.base-font-size = 16px
+rupture.anti-overlap = true
+rupture.enable-em-breakpoints = true
+rupture.mobile-cutoff = 480px
+rupture.desktop-cutoff = 1024px
+rupture.scale = 0 480px 768px 1024px 1280px
+
+$font-stack = 'Roboto', sans-serif
+$font-size = 16
+$font-color = #323232
+
+@import 'helpers/mixins'
+@import 'helpers/variables'
+@import 'helpers/svg-sprite'
+
+@import 'base/fonts'
+@import 'helpers/optimize'
+@import 'base/base'
+@import 'base/layout'
+
+@import 'blocks/**/*'
+@import 'components/**/*'

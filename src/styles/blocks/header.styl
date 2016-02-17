@@ -1,0 +1,191 @@
+$headerBgColor = #343245;
+$headerBgColorHover = #3c3a4e;
+$headerHeight = 60px;
+
+.header
+	position: relative
+	width: 100%
+	clearfix()
+	+between(1, 3)
+		padding-bottom: 60px
+	+tablet()
+		background-color: $headerBgColor
+		height: 100%
+		width: 230px
+		float: left
+
+	&_state
+
+		&_menu-open
+
+			.header-options
+			.header__menu
+			.header__exit
+				transform: translateX(0)
+
+			.header__open
+				z-index: 3
+				left: calc(100% - 60px)
+
+		&_search
+
+			.header__search
+				transform: translateX(0)
+
+	&-tools
+		size(270px, $headerHeight)
+		background-color: $headerBgColor
+		+between(1, 3)
+			width: 100%
+			float: none
+		+mobile()
+			position: relative
+
+	&-options
+		absolute: top 0 right 0
+		fs: 0
+
+		height: $headerHeight
+		background-color: $headerBgColor
+		text-align: right
+		transition: transform .3s ease
+		+between(1, 3)
+			background-color: #2d2b3b
+		+desktop()
+			padding-right: 40px
+			width: 290px
+		+tablet()
+			width: 100%
+			position: static
+		+mobile()
+			width: calc(100% - 60px)
+			absolute: top 0 left 0 right auto
+			transform: translateX(-100%)
+
+	&-button
+		position: relative
+		display: inline-block
+		size($headerHeight)
+		b: none
+		background-color: transparent
+		transition: background-color .3s ease, color .3s ease
+		cursor: pointer
+		text-decoration: none
+		vertical-align: top
+		hover-color: $headerBgColorHover
+
+		.icon
+			align()
+
+		.icon-list
+			fill: $green
+
+		.icon-loupe
+			fill: #9a97b3
+
+		.icon-support
+		.icon-setting
+			fill: $light-purple
+
+		&_type_text
+			width: auto
+			padding: 0 15px
+			fs: rem(13px)
+			color: $light-purple
+			museo-b()
+			text-align: left
+			line-height: rem(60px)
+			overflow: hidden
+			hover-color: $green, true
+
+			&.header-button_state_active
+				color: $green
+
+		&_z_2
+			z-index: 2
+
+		&_padding-left_30
+			padding-left: 30px
+
+		&:active
+			background-color: $headerBgColorHover
+
+		&:hover
+		&_state_active
+			.icon-support
+			.icon-setting
+				fill: $green
+
+	&__note
+		size(60px, 100%)
+		background-color: $green
+		text-align: center
+		line-height: $headerHeight
+		color: #fff
+		text-decoration: none
+		hover-lighten: 10%
+		transition: background-color .3s ease
+		museo-b()
+		fs: 18px
+
+	&__logo
+		margin: 0 60px 0 40px
+		padding: 10px 0
+		height: 100%
+		text-align: left
+		+tablet()
+			margin-left: 30px
+		+mobile()
+			padding-left: 60px
+			text-align: center
+
+	&__search
+		absolute: top 0 left 0
+		z-index: 1
+		padding: 10px 80px 10px 30px
+		size(100%)
+		background-color: $headerBgColor
+		transform: translateX(-100%)
+		transition: transform .3s ease
+
+	&__login
+		max-width: 130px
+		+between(1, 3)
+			ellipsis()
+			display: block
+			padding-left: 30px
+			margin-right: 60px
+			float: none
+			text-align: left
+			max-width: none
+			width: calc(100% - 60px)
+
+	&__menu
+		margin: 0 290px 0 270px
+		transition: transform .3s ease
+		+between(1, 3)
+			margin: 0
+		+tablet()
+			width: 100%
+		+mobile()
+			width: calc(100% - 60px)
+			transform: translateX(-100%)
+
+	&__exit
+		absolute: bottom 0 left 0
+		width: 100%
+		background-color: #2d2b3b
+		transition: transform .3s ease
+		+mobile()
+			width: calc(100% - 60px)
+			transform: translateX(-100%)
+
+	&__open
+		background-color: $headerBgColor
+		transition: all .3s ease
+		+mobile()
+			absolute: top 0 left 0
+
+
+
+

@@ -1,0 +1,33 @@
+.input-block
+	position: relative
+	width: rem(530px)
+
+	& + &
+		margin-top: 15px
+
+	&_valid
+
+		&_succees
+			.icon-succees
+				display: inline-block
+
+		&_fail
+			.icon-delete
+				display: inline-block
+
+	&_inline
+		display: inline-block
+
+	&__label
+		padding-bottom: rem(10px)
+		text-align: left
+
+		&_required
+
+			&:after
+				position: relative
+				left: rem(3px)
+				content: '*'
+				color: $red
+				line-height: rem(13px)
+				fs: rem(22px)

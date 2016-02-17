@@ -1,0 +1,23 @@
+include ../helpers/variables
+include ../helpers/mixins
+
+!= "<!-- saved from url=(0014)about:internet -->"
+
+doctype html
+
+html(lang="ru-RU" manifest="offline.manifest")
+
+	include ../meta/head
+	body
+		.main
+			include ../blocks/header
+
+			.sidebar
+				block sidebar
+
+			.page
+				.listbar
+					block listbar
+
+				.content.content_margin-left_270
+					block content

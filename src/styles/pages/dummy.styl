@@ -1,0 +1,78 @@
+.dummy
+	margin: 30px auto 50px
+	max-width: 1024px
+	text-align: center
+
+	&-form
+		margin: 30px auto 0
+		max-width: 530px
+		text-align: left
+
+		.button
+			margin-top: 20px
+
+		h2
+			margin-bottom: 40px
+			font-weight: 100
+			text-align: center
+			fs: rem(38px)
+
+	&-info
+		padding: 0 40px
+		margin-top: 30px
+		text-align: justify
+		font-weight: 300
+		line-height: rem(20px)
+
+		&__link
+			font-weight: 400
+			transition: all .3s ease
+			text-decoration: none
+			display: inline-block
+			color: $font-color
+			border-bottom: 1px dotted $font-color
+
+			&:hover {
+				color: $green
+				border-color: $green
+			}
+
+		p + p
+			margin-top: 10px
+
+	&-note
+		margin-top: 20px
+		color: darkgrey
+		fs: rem(12px)
+		text-align: right
+		font-style: italic
+
+		span
+			position: relative
+			display: inline-block
+			top: 6px
+			color: $red
+			line-height: rem(10px)
+			fs: rem(22px)
+
+	&-social
+		margin-top: 20px
+		fz: 0
+		text-align: center
+
+		a
+			text-decoration: none
+
+			& + a
+				margin-left: 20px
+
+	.social-icon
+		display: inline-block
+		size(40px)
+		fill: $font-color
+		transition: fill .3s ease
+		cursor: pointer
+
+		&:hover
+			fill: $green
+

@@ -1,0 +1,94 @@
+$menuItemMainColor = #3eaf71
+$menuItemCalendarColor = #fbb843
+$menuItemServicesColor = #39c5d6
+$menuItemClientsColor = #badb56
+$menuItemFinancesColor = #f65f68
+$menuItemStockColor = #7090c7
+
+.menu
+	fs: 0
+	background-color: $headerBgColor
+
+	.icon
+		absolute: top 0 left 0
+
+	&__item
+		position: relative
+		padding-left: 25px
+		line-height: 16px
+		color: #fff
+		museo-b()
+		fs: rem(12px)
+		text-transform: uppercase
+		transition: color .3s ease
+		+tablet()
+			padding-left: 35px
+
+		&_type
+
+			&_main
+				&.menu__item_state_active
+					color: $menuItemMainColor
+				.icon
+					fill: $menuItemMainColor
+
+			&_calendar
+				&.menu__item_state_active
+					color: $menuItemCalendarColor
+				.icon
+					fill: $menuItemCalendarColor
+
+			&_services
+				&.menu__item_state_active
+					color: $menuItemServicesColor
+				.icon
+					fill: $menuItemServicesColor
+
+			&_clients
+				&.menu__item_state_active
+					color: $menuItemClientsColor
+				.icon
+					fill: $menuItemClientsColor
+
+			&_finances
+				&.menu__item_state_active
+					color: $menuItemFinancesColor
+				.icon
+					fill: $menuItemFinancesColor
+
+			&_stock
+				&.menu__item_state_active
+					color: $menuItemStockColor
+				.icon
+					fill: $menuItemStockColor
+
+	&__link
+		padding: 22px 18px
+		display: inline-block
+		text-decoration: none
+		transition: background-color .3s ease
+		hover-color: $headerBgColorHover
+		+between(1, 3)
+			padding-left: 30px
+			padding-right: 30px
+			display: block
+
+		&:hover
+
+			.menu__item_type_main
+				color: $menuItemMainColor
+
+			.menu__item_type_calendar
+				color: $menuItemCalendarColor
+
+			.menu__item_type_services
+				color: $menuItemServicesColor
+
+			.menu__item_type_clients
+				color: $menuItemClientsColor
+
+			.menu__item_type_finances
+				color: $menuItemFinancesColor
+
+			.menu__item_type_stock
+				color: $menuItemStockColor
