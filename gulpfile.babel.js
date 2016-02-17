@@ -8,13 +8,16 @@ gulp.registry(hub);
 
 gulp.task('default',
   gulp.series(
-    gulp.parallel('clean', 'environment'),
     'build',
-    'server',
-    'watch'
+    gulp.parallel('server', 'watch')
   )
 );
 
+gulp.task('styles:dep', gulp.series('svg', 'styles'));
+
 gulp.task('build',
-  gulp.series('styles', 'templates')
+  gulp.series(
+    'clean',
+    gulp.parallel('styles:dep', 'templates', 'copy', 'scripts')
+  )
 );

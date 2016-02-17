@@ -3,6 +3,7 @@ import pkg from '../package.json'
 const src = 'src';
 const dist = 'public';
 const styles = 'styles';
+const icon = 'icons';
 const scripts = 'scripts';
 const templates = 'templates';
 
@@ -21,7 +22,7 @@ const config = {
 
   styles: {
     src: `./${src}/${styles}`,
-    entry: 'common.styl',
+    entry: ['common.styl', 'dummy.styl'],
     dist: `./${dist}/assets/${styles}`
   },
 
@@ -38,8 +39,13 @@ const config = {
     data: {
       jv0: 'javascript:void(0);',
       projectName: pkg.name,
-      projectVersion: pkg.version
+      projectVersion: pkg.version,
+      timestamp: Date.now()
     }
+  },
+
+  svgIcon : {
+    src: `./${src}/${icon}/**/*.svg`
   }
 };
 

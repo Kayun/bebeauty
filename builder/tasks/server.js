@@ -5,21 +5,18 @@ import debuga from 'debuga';
 
 gulp.task('server', done => {
   browserSync.init({
-    files: ['public/**/*'],
+    files: ['public/**/*.*'],
     open: !!gutil.env.open,
     reloadOnRestart: true,
-    port: gutil.env.port || 3000,
-    reloadDelay: 100,
-    logLevel: "debug",
+    port: 3000,
+    reloadDelay: 300,
     server: {
       baseDir: [
         'src/resources',
         'public'
       ],
-      directory: false,
-      middleware: process.env.NODE_ENV === 'development' ? [debuga()] : []
-    },
-    tunnel: !!gutil.env.tunnel
+      directory: true
+    }
   });
   done();
 });

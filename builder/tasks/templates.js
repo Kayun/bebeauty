@@ -11,11 +11,12 @@ import rename from 'gulp-rename';
 import prettify from 'gulp-html-prettify';
 import config from '../builder.config.js'
 
+const NODE_ENV = process.env.NODE_ENV || 'development';
 const templates = done => {
   gulp.src(`${config.templates.src}/**/*.jade`)
     .pipe(plumber())
     .pipe(cached('jade'))
-    .pipe(process.env.NODE_ENV === 'development' ? inheritance({basedir: config.path.src}) : gutil.noop())
+    .pipe(NODE_ENV == 'development' ? inheritance({basedir: config.path.src}) : gutil.noop())
     .pipe(filter(file => config.templates.pages.test(file.path)))
     .pipe(jade({data: config.templates.data}))
     .pipe(prettify(config.templates.prettify))
