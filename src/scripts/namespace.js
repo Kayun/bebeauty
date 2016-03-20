@@ -5,5 +5,6 @@ export default {
   View: {},
   Collection: {},
   Layout: {},
-  Model: {}
+  Model: {},
+  Behaviors: {}
 };

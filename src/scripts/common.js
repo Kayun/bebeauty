@@ -1,21 +1,45 @@
 'use strict';
 
-import './utils/polyfill';
+import 'utils/polyfill';
+import utils from 'utils';
+import $ from 'jquery';
 import _ from 'underscore';
-import $ from 'exports?Zepto!zepto';
 import Backbone from 'backbone';
-Backbone.$ = $;
-import App from 'namespace';
+import LocalStorage from 'backbone.localstorage';
+import Marionette from 'backbone.marionette';
 
-import workspace from 'routers/workspace';
-import form from 'views/form';
+Backbone.LocalStorage = LocalStorage;
 
-App.Router.Workspace = workspace;
-App.View.Form = form;
+import 'define';
 
-$(function () {
-  new App.Router.Workspace();
-  Backbone.history.start();
-  _.chain();
+import namespace from './namespace';
+import User from 'models/user';
+import MainRoute from 'routers/main';
+import DefaultLayout from 'layouts/default';
+
+const App = window.App = new Marionette.Application({
+  regions: {
+    main: 'body'
+  }
 });
+
+_.extend(App, namespace);
+
+App.Model.User = new User({id: 'default.json'});
+
+App.on('start', () => {
+  new MainRoute();
+  App.Layout.Default = new DefaultLayout();
+  App.getRegion('main').show(App.Layout.Default);
+  Backbone.history.start({pushState: true});
+});
+
+App.Model.User.fetch({
+  success() {
+    App.start();
+  }
+});
+
+$(document).on('click', 'a', utils.link);
+
 

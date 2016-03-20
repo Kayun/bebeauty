@@ -71,8 +71,50 @@ const DOM = {
   elementStart(element, sourceElement) {
     sourceElement.insertAdjacentElement('afterBegin', element);
     return element;
-  }
+  },
 
+  fadeIn(element, delay, callback) {
+    const endHandler = function handler() {
+      element.removeEventListener('transitionend', handler);
+      element.classList.add('l-hidden');
+      if (callback) {
+        callback();
+      }
+    };
+    setTimeout(() => {
+      element.classList.remove('l-fade-out');
+      element.classList.add('l-fade-in');
+    }, delay || 0);
+
+    element.addEventListener('transitionend', endHandler);
+  },
+
+  fadeOut(element, delay, callback) {
+    const endHandler = function handler() {
+      element.removeEventListener('transitionend', handler);
+      if (callback) {
+        callback();
+      }
+    };
+    element.classList.remove('l-hidden');
+
+    setTimeout(() => {
+      element.classList.remove('l-hidden');
+      element.classList.remove('l-fade-in');
+      element.classList.add('l-fade-out');
+    }, delay || 0);
+
+    element.addEventListener('transitionend', endHandler);
+  },
+
+  fadeBlink(element, callback) {
+    this.fadeIn(element, 0, () => {
+      if (callback) {
+        callback();
+      }
+      this.fadeOut(element);
+    });
+  }
 };
 
 export default DOM;

@@ -1,0 +1,27 @@
+include ../../../templates/helpers/mixins
+
+.header-tools.l-left
+    a.header__note.l-mobile-hidden.l-right.js-header-clients(href= jv0)
+    .header-button.l-tablet-hidden.l-desktop-hidden.header-button_z_2.l-right
+        +icon('loupe')
+
+    .header-button.header__open.l-tablet-hidden.l-desktop-hidden.l-left
+        +icon('list')
+
+    .header__logo
+        +logo("Log", "Book")
+
+    .header__search.js-header-search
+
+.header-options
+    a.header-button.l-tablet-hidden.l-mobile-hidden.l-right.js-header-support(href="/support/" title="Техническая поддержка")
+        +icon('support')
+        
+    a.header-button.l-right(href="/setting/" title="Настройки"): +icon('setting')
+    a.header-button.header__login.header-button_type_text.l-right(href= jv0 title="Иванов Иван Иванович") Иванов Иван
+
+.header__menu.js-header-menu
+    
+.header__exit.l-desktop-hidden
+    button.header-button.header-button_padding-left_30.header-button_type_text.l-width-100p(type="button") Выход
+
