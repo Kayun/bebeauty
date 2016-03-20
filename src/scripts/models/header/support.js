@@ -3,6 +3,9 @@
 export default Backbone.Model.extend({
   urlRoot: '/data/questions/',
   url() {
-    return `${this.urlRoot}answers.json`; // ?fields=(meta:answers)
+    return `${this.urlRoot}answers.json`; // ?fields=[meta:answers]
+  },
+  params: {
+    fields: '[meta:answers]'
   }
 });
