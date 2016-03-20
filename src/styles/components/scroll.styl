@@ -1,0 +1,22 @@
+@import '../../../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css'
+
+.ps-theme-main
+
+	> .ps-scrollbar-y-rail
+		width: 4px
+		transition: background-color .3s ease, opacity .3s ease;
+		opacity: .5
+
+		&:hover
+			opacity: 1
+
+		> .ps-scrollbar-y
+			width: 100%
+			background-color: $green
+			transition: background-color .3s ease;
+
+	&:hover
+	&.ps-in-scrolling
+
+		& > .ps-scrollbar-y-rail > .ps-scrollbar-y
+			background-color: $green !important

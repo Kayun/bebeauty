@@ -7,24 +7,23 @@ html
 
 html
 body
+	position: relative
 	height: 100%
 
 .main
-	height: 100%
 	min-height: 100%
 	+mobile()
 		min-width: 320px
 		overflow: hidden
 
-.page
-	margin-left: 270px
-	height: calc(100% - 60px)
+	&_layout_login
+		position: relative
+		text-align: center
+		padding: 55px 0 200px
 
-.login
-	width: 1024px
-	margin: 0 auto
-	padding: 100px 0
-	text-align: center
+.page
+	margin-left: rem(270px)
+	height: calc(100% - 60px)
 
 .login-form
 	width: 530px

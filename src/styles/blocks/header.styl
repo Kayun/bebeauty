@@ -1,6 +1,10 @@
-$headerBgColor = #343245;
+$headerBgColor = $partialsBgColor;
 $headerBgColorHover = #3c3a4e;
 $headerHeight = 60px;
+
+@keyframes blink
+	50%
+		background-color: rgba($green, 0)
 
 .header
 	position: relative
@@ -112,21 +116,39 @@ $headerHeight = 60px;
 
 		&:hover
 		&_state_active
+		
 			.icon-support
 			.icon-setting
 				fill: $green
 
+		&_state_notice
+			
+			&:before
+				absolute: top rem(15px) right rem(15px)
+				size(rem(10px))
+				content: ''
+				background-color: $yellow
+				border-radius: 50%
+
 	&__note
 		size(60px, 100%)
-		background-color: $green
+		background-color: rgba($green, 1)
 		text-align: center
 		line-height: $headerHeight
 		color: #fff
 		text-decoration: none
 		hover-lighten: 10%
+		cursor: pointer
 		transition: background-color .3s ease
 		museo-b()
 		fs: 18px
+		
+		&_state_active
+			animation: blink 1s infinite ease-in-out
+			
+		&:hover
+			animation: none
+			background-color: rgba($green, 1)
 
 	&__logo
 		margin: 0 60px 0 40px

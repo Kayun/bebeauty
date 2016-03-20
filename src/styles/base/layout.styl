@@ -7,6 +7,19 @@
 .l-left
 	float: left
 
+.l-fade-in {
+  opacity: 0
+  will-change: opacity
+}
+.l-fade-out {
+  opacity: 1
+  will-change: opacity
+}
+
+.l-hidden {
+  display: none !important
+}
+
 .l-desktop-hidden
 	+desktop()
 		display: none !important
