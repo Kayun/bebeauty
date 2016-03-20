@@ -8,8 +8,8 @@ import ClientsModel from 'models/header/clients';
 
 const supportModel = new SupportModel();
 const clientsModel = new ClientsModel();
-setInterval($.proxy(supportModel, 'fetch'), 60000);
-setInterval($.proxy(clientsModel, 'fetch'), 10000);
+setInterval($.proxy(supportModel, 'fetch', {data: supportModel.params}), 60000);
+setInterval($.proxy(clientsModel, 'fetch', {data: clientsModel.params}), 10000);
 
 export default Marionette.LayoutView.extend({
   template,
@@ -33,7 +33,7 @@ export default Marionette.LayoutView.extend({
   onShow() {
     new ClientsView({model: clientsModel});
     new SupportView({model: supportModel});
-    clientsModel.fetch();
-    supportModel.fetch();
+    clientsModel.fetch({data: clientsModel.params});
+    supportModel.fetch({data: supportModel.params});
   }
 });
