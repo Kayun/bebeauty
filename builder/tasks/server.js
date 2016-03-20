@@ -8,15 +8,9 @@ gulp.task('server', done => {
     files: ['public/**/*.*'],
     open: !!gutil.env.open,
     reloadOnRestart: true,
-    port: 3000,
+    port: 3001,
     reloadDelay: 300,
-    server: {
-      baseDir: [
-        'src/resources',
-        'public'
-      ],
-      directory: true
-    }
+    proxy: 'http://localhost:3000'
   });
   done();
 });

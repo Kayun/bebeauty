@@ -4,12 +4,21 @@ import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import rename from 'gulp-rename';
 import path from 'path';
+import plumber from 'gulp-plumber';
 import svgSymbols from 'gulp-svg-symbols';
-import errorHandler from '../helpers/errorHandler.js'
-import config from '../builder.config.js'
+import config from '../builder.config.js';
+import notify from 'gulp-notify';
 
 const svg = done => {
   gulp.src(config.svgIcon.src)
+    .pipe(plumber({
+      errorHandler: notify.onError(err => {
+        return {
+          title: 'SVG sprite',
+          message: err.message
+        };
+      })
+    }))
     .pipe(svgSymbols({
       title: false,
       id: 'icon-%f',

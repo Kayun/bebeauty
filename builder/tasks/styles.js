@@ -23,13 +23,22 @@ const styles = done => {
   gulp.src(config.styles.entry, {
     cwd: config.styles.src
   })
-    .pipe(plumber({errorHandler}))
+    .pipe(plumber({
+      errorHandler: notify.onError(err => {
+        return {
+          title: 'Stylus',
+          message: err.message,
+          sound: true
+        };
+      })
+    }))
     .pipe(sourcemaps.init({debug: NODE_ENV == 'development'}))
     .pipe(stylus({
       use: [
         rupture(),
         axis()
-      ]
+      ],
+      'include css': true
     }))
     .pipe(autoprefixer({
       browsers: config.browsers,

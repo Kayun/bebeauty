@@ -6,6 +6,7 @@ import watch from 'gulp-watch';
 import styles from './styles.js';
 import templates from './templates.js';
 import svg from './svg.js';
+import copy from './copy.js';
 
 
 gulp.task('watch', () => {
@@ -18,6 +19,11 @@ gulp.task('watch', () => {
 
   watch('src/templates/**/*.jade', gulp.series(
     templates,
+    reload
+  ));
+
+  watch('src/resources/data/**/*.json', gulp.series(
+    copy.data,
     reload
   ));
 

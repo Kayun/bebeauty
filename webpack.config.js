@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+import WebpackNotifierPlugin from 'webpack-notifier';
 import path from 'path';
 
 const NODE_ENV = global.process.env.NODE_ENV || 'development';
@@ -7,8 +8,8 @@ export default {
 
   context: path.join(__dirname, 'src/scripts'),
   entry: {
-    common: './common.js',
-    test: 'mocha!../../test/index.js'
+    common: './common.js'
+    // test: 'mocha!../../test/index.js'
   },
 
   output: {
@@ -29,8 +30,6 @@ export default {
     ],
     extensions: ['', '.js', '.jade'],
     alias: {
-      jquery: 'zepto/src/zepto.js',
-      zepto: 'zepto/src/zepto.js',
       'chai-jquery': 'chai-jquery/chai-jquery.js'
     }
   },
@@ -77,8 +76,14 @@ export default {
       NODE_ENV: JSON.stringify(NODE_ENV)
     }),
     new webpack.ProvidePlugin({
+      $: 'jquery',
       _: 'underscore',
-      Backbone: 'backbone'
+      Backbone: 'backbone',
+      Marionette: 'backbone.marionette'
+    }),
+    new WebpackNotifierPlugin({
+      title: 'Webpack',
+      alwaysNotify: true
     })
   ],
 

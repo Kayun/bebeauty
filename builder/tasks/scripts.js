@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import webpack from 'webpack';
+import notify from 'gulp-notify';
 import config from '../../webpack.config.js';
 
 const scripts = done => {
@@ -10,7 +11,7 @@ const scripts = done => {
       gutil.log(stats.toString({
         hasError: true,
         colors: true,
-        chunkModules: true,
+        chunkModules: false,
         reasons: false
       }));
     }
