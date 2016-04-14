@@ -1,6 +1,6 @@
 'use strict';
 
-import headerBehaviors from '../../behaviors/header';
+import headerBehaviors from 'behaviors/header';
 
 export default Marionette.ItemView.extend({
   template: false,

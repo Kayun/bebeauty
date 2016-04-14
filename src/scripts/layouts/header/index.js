@@ -1,8 +1,10 @@
 'use strict';
 
+import App from 'namespace';
 import template from './template';
 import SupportView from 'views/header/support';
 import ClientsView from 'views/header/clients';
+import MenuView from 'views/menu';
 import SupportModel from 'models/header/support';
 import ClientsModel from 'models/header/clients';
 
@@ -28,6 +30,11 @@ export default Marionette.LayoutView.extend({
     this.listenTo(clientsModel, 'change', model => {
       clientsModel.trigger('client:count', model.get('meta'));
     });
+  },
+
+  onBeforeShow() {
+    App.View.Menu = new MenuView({model: App.Model.User.clone()});
+    this.showChildView('menu', App.View.Menu);
   },
 
   onShow() {

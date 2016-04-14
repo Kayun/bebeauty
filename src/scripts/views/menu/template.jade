@@ -1,0 +1,36 @@
+include ../../../templates/helpers/mixins
+
+a.menu__link.js-menu-link(href="/", data-id=0, data-href="/")
+    .menu__item.menu__item_type_main.js-menu-item
+        +icon('home')
+        | Главная
+
+a.menu__link.js-menu-link(href="/calendar", data-id=1, data-href="/calendar")
+    .menu__item.menu__item_type_calendar.js-menu-item
+        +icon('calendar')
+        | Календарь
+
+a.menu__link.js-menu-link(href="/services", data-id=2, data-href="/services")
+    .menu__item.menu__item_type_services.js-menu-item
+        +icon('order')
+        | Услуги
+
+a.menu__link.js-menu-link(href="/clients", data-id=3, data-href="/clients")
+    .menu__item.menu__item_type_clients.js-menu-item
+        +icon('people')
+        | Клиенты
+
+if accountType != "base"
+
+    a.menu__link.js-menu-link(href="/finances", data-id=4, data-href="/finances")
+        .menu__item.menu__item_type_finances.js-menu-item
+            +icon('diagram')
+            | Финансы
+    
+if accountType == "platinum"
+
+    a.menu__link.js-menu-link(href="/stock", data-id=5, data-href="/stock")
+        .menu__item.menu__item_type_stock.js-menu-item
+            +icon('box')
+            | Склад
+

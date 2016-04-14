@@ -1,0 +1,43 @@
+include ../../../templates/helpers/mixins
+include ../../../templates/helpers/variables
+
+.content-header.clearfix
+    +button.l-right Добавить клиента
+    
+    .title-h2
+        strong 56
+        = " "
+        | клиентов на подходе
+
+h1.title-h1.title-center Очередь клиентов
+#order
+    .ticket
+        .ticket-label
+            .ticket__item 9 дек 2014
+            .ticket__item.ticket-light 15:30 – 16:30
+            .ticket__item: +icon("time")
+            .ticket__item
+                h4.ticket__title.ticket-300 Женская стрижка
+                h5.ticket__note.ticket-300 Евгения Троицкая
+                
+            .ticket__item
+                .avatar: img(src="")
+                
+            .ticket__item 2500 
+            .ticket__item.ticket-fix-215
+                +button().button_width_90.button_size_small Оформить
+                +button().button_width_90.button_color_red.button_size_small Не пришел
+    .ticket
+        .ticket-label
+            .ticket__item 9 дек 2014
+            .ticket__item.ticket-light 15:30 – 16:30
+            .ticket__item: +icon("time")
+            .ticket__item
+                h4.ticket__title.ticket-300 Женская стрижка
+                h5.ticket__note.ticket-300 Евгения Троицкая
+                
+            .ticket__item
+                .avatar: img(src="")
+                
+            .ticket__item 2500 
+            .ticket__item.ticket-fix-215

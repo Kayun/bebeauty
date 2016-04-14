@@ -1,0 +1,30 @@
+.sidebar-block
+  padding: 40px
+  text-align: center
+  
+  &__title
+    margin-bottom: 20px
+    font-weight: 300
+    fs: rem(26px)
+    text-decoration: none
+    color: $text-color
+    
+  &__text
+    museo-r()
+    fs: rem(12px)
+    color: #4e6080
+    text-decoration: none
+    transition: all .3s ease
+    
+    & + &
+      margin-top: 10px
+    
+    /a&
+      border-bottom: 1px dotted @color
+      
+      &:hover
+        color: $blue
+        border-color: @color
+        
+  &__buttons
+    margin-top: 20px

@@ -1,6 +1,15 @@
 {
-  "firstName": "Иван",
-  "lastName": "Иванов",
-  "middleName": "Иванович",
-  "newClients": 21
+  "error": false,
+  "data": {
+    "firstName": "Иван",
+    "lastName": "Иванов",
+    "middleName": "Иванович",
+    "accountType": "platinum",
+    "meta": {
+      "new": 123
+    }
+  }
 }
+
+
+

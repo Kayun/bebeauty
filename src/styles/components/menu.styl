@@ -19,6 +19,7 @@ $menuItemStockColor = #7090c7
 		color: #fff
 		museo-b()
 		fs: rem(12px)
+		no-select()
 		text-transform: uppercase
 		transition: color .3s ease
 		+tablet()
@@ -63,11 +64,12 @@ $menuItemStockColor = #7090c7
 					fill: $menuItemStockColor
 
 	&__link
+	&__wrap
 		padding: 22px 18px
 		display: inline-block
 		text-decoration: none
+		vertical-align: top
 		transition: background-color .3s ease
-		hover-color: $headerBgColorHover
 		+between(1, 3)
 			padding-left: 30px
 			padding-right: 30px
@@ -92,3 +94,9 @@ $menuItemStockColor = #7090c7
 
 			.menu__item_type_stock
 				color: $menuItemStockColor
+				
+	&__wrap
+		cursor: default
+				
+	&__link
+		hover-color: $headerBgColorHover

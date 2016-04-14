@@ -1,5 +1,6 @@
 import template from './template';
-import HeaderView from '../header';
+import HeaderLayout from 'layouts/header';
+import ContentLayout from 'layouts/main';
 
 export default Marionette.LayoutView.extend({
   template,
@@ -13,6 +14,7 @@ export default Marionette.LayoutView.extend({
   },
 
   onBeforeShow() {
-    this.showChildView('header', new HeaderView());
+    this.showChildView('header', new HeaderLayout());
+    this.showChildView('content', new ContentLayout());
   }
 });

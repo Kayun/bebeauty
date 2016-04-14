@@ -1,6 +1,17 @@
+include ../../../templates/helpers/mixins
+
 header.header#header
 
-aside.sidebar#sidebar
+aside.sidebar
+    #sidebar.sidebar-outer
+
+    .sidebar-footer
+        .sidebar-block
+            h3.sidebar-block__title 8 800 777 55 66
+            a.sidebar-block__text(href="mailto:email@gmail.com") email@gmail.com
+            p.sidebar-block__text Часто задаваемые вопросы
+            .sidebar-block__buttons
+                a(href="/faq"): +icon("questions").icon-blue.icon-fade
 
 .page#content
 

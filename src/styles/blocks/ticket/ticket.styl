@@ -1,0 +1,47 @@
+$bg-color = #f9f8fd
+$bg-color-hover = #f3f2f9
+
+.ticket
+  
+  &-label
+    padding: 0 15px
+    display: table
+    size(100%, rem(70px))
+    fs: rem(16px)
+    text-align: left
+    border-left: 5px solid #000
+    background-color: $bg-color
+    hover-color: $bg-color-hover
+    transition(background-color )
+    
+    &_state_active
+      background-color: $bg-color-hover
+    
+  &__item
+    display: table-cell
+    padding: 0 10px
+    vertical-align: middle
+    white-space: nowrap
+  
+  &-300
+    max-width: 300px
+  
+  &-fix-215
+    width: 215px
+
+  &-light
+    font-weight: 300
+    
+  &-right
+    text-align: right
+    
+  &__title
+    font-weight: 400
+    fs: rem(18px)
+    
+  &__note
+    padding-top: 5px
+    museo-r()
+    fs: rem(12px)
+    color: #393939
+    white-space: normal

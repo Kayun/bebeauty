@@ -11,6 +11,7 @@ body
 	height: 100%
 
 .main
+	padding-top: 60px
 	min-height: 100%
 	+mobile()
 		min-width: 320px
@@ -23,15 +24,18 @@ body
 
 .page
 	margin-left: rem(270px)
-	height: calc(100% - 60px)
-
-.login-form
-	width: 530px
-	margin: 0 auto
 
 .content
 	padding: 40px
-	height: 100%
 
 	&_margin-left_270
 		margin-left: 270px
+		
+	&-header
+		margin-bottom: 20px
+		
+.clearfix
+	clearfix()
+	
+strong
+	font-weight: 500

@@ -3,6 +3,20 @@
 $sidebar-bg-color = #f3f2f9
 
 .sidebar
-	@extend $sidebar
-	padding: 40px
-	background-color: $sidebar-bg-color
+  fixed: top 0 left 0
+  z-index: 9
+  padding-top: 60px
+  padding-bottom: 225px
+  size(270px, 100% )
+  background-color: $sidebar-bg-color
+  
+  &-inner
+    padding: 40px
+    
+  &-outer
+    height: 100%
+    overflow: hidden
+    
+  &-footer
+    absolute: bottom 0 left 0
+    size(100%, 225px)
